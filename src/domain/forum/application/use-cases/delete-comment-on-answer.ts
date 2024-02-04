@@ -10,7 +10,7 @@ interface DeleteCommentOnAnswerUseCaseRequest {
 
 type DeleteCommentOnAnswerUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
-  object
+  null
 >
 
 export class DeleteCommentOnAnswerUseCase {
@@ -33,6 +33,6 @@ export class DeleteCommentOnAnswerUseCase {
 
     await this.commentOnAnswerRepository.delete(answerComment)
 
-    return right({})
+    return right(null)
   }
 }
